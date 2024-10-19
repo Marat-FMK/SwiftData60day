@@ -5,4 +5,12 @@
 //  Created by Marat Fakhrizhanov on 19.10.2024.
 //
 
-import Foundation
+import SwiftData
+import SwiftUI
+
+@Model
+class Friend {
+    var id: String
+    var name:  String
+}
+
