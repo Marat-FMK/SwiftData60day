@@ -21,4 +21,17 @@ class User {
     var registered: String
     var tags: String
     
+    init(id: String, isActive: String, name: String, age: Int, company: String, email: String, adress: String, about: String, registered: String, tags: String) {
+        self.id = id
+        self.isActive = isActive
+        self.name = name
+        self.age = age
+        self.company = company
+        self.email = email
+        self.adress = adress
+        self.about = about
+        self.registered = registered
+        self.tags = tags
+    }
+    // Friend ?
 }
