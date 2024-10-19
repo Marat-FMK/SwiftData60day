@@ -13,5 +13,7 @@ struct SwiftData60dayApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(User.self)
+        .modelContainer(Friend.self)
     }
 }
