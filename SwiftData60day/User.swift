@@ -20,8 +20,9 @@ class User {
     var about: String
     var registered: String
     var tags: String
+    var friends: [Friend]
     
-    init(id: String, isActive: String, name: String, age: Int, company: String, email: String, adress: String, about: String, registered: String, tags: String) {
+    init(id: String, isActive: String, name: String, age: Int, company: String, email: String, adress: String, about: String, registered: String, tags: String, friends: [Friend]) {
         self.id = id
         self.isActive = isActive
         self.name = name
@@ -32,6 +33,7 @@ class User {
         self.about = about
         self.registered = registered
         self.tags = tags
+        self.friends = friends
     }
     // Friend ?
 }
