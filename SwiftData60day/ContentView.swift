@@ -17,7 +17,7 @@ struct ContentView: View {
                   }
                  // Далее создаем ф-ию для загрузки данных из интернет
             func loadData() async {
-                      guard let url = URL(string: "https://itunes.apple.com/search?term=taylor+swift&entity=song") else { // Создаем ЮРЛ из строки
+                      guard let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json") else { // Создаем ЮРЛ из строки
                           print("Invalid URL") // ошибка если юрл невозможно создать
                           return
                       }
