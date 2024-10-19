@@ -14,6 +14,5 @@ struct SwiftData60dayApp: App {
             ContentView()
         }
         .modelContainer(User.self)
-        .modelContainer(Friend.self)
     }
 }
