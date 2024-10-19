@@ -9,7 +9,7 @@ import SwiftData
 import SwiftUI
 
 @Model
-class User {
+class User: Codable {
     var id: String
     var isActive: String
     var name: String
