@@ -14,12 +14,15 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            Text(" Users List ")
-            // https://www.hackingwithswift.com/samples/friendface.json
-            
             
             List(users) { user in
-                Text(user.name)
+                NavigationLink (destination: AboutUser(user: user), label: {
+                    HStack{
+                        Image(systemName: user.isActive ? "circle" : "circle.fill")
+                            .foregroundStyle(user.isActive ? .red : .green)
+                        Text(user.name)
+                    }
+                })
             }
             .navigationTitle("Project")
             .task { // добавляем этот модификатор к представлению (Лист например)
