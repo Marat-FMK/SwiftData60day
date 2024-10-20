@@ -18,8 +18,8 @@ struct ContentView: View {
             List(users) { user in
                 NavigationLink (destination: AboutUser(user: user), label: {
                     HStack{
-                        Image(systemName: user.isActive ? "circle" : "circle.fill")
-                            .foregroundStyle(user.isActive ? .red : .green)
+                        Image(systemName: user.isActive ? "circle.fill" : "circle")
+                            .foregroundStyle(user.isActive ? .green : .red)
                         Text(user.name)
                     }
                 })
