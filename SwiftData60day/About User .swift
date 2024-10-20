@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct About_User_: View {
+struct AboutUser: View {
     
- private var user: User
+ var user: User
     
     var body: some View {
         Text(user.name)
@@ -23,5 +23,5 @@ struct About_User_: View {
 }
 
 #Preview {
-   
+    AboutUser(user: User(id: "id", isActive: true, name: "name", age: 23, company: "comp", email: "email", address: "address", about: "about", registered: "reg", tags: ["regs"], friends: [Friend(id: "frID", name: "frName")]))
 }
