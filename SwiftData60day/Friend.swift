@@ -5,17 +5,13 @@
 //  Created by Marat Fakhrizhanov on 19.10.2024.
 //
 
-import SwiftData
 import SwiftUI
 
-@Model
-class Friend {
+
+struct Friend: Codable, Identifiable {
     var id: String
     var name:  String
     
-    init(id: String, name: String) {
-        self.id = id
-        self.name = name
-    }
+   
 }
 
