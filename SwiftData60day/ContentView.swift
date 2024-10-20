@@ -6,28 +6,28 @@
 //
 
 import SwiftUI
-import SwiftData
+
 
 struct ContentView: View {
-    
-    @Environment(\.modelContext) var modelContext
-    @Query var users: [User]
+ 
+    @State private var users: [User] = []
     
     var body: some View {
-        
-        Text(" Users List ")
-        // https://www.hackingwithswift.com/samples/friendface.json
-        
-        List {
-            ForEach(users) { user in
+        NavigationStack {
+            Text(" Users List ")
+            // https://www.hackingwithswift.com/samples/friendface.json
+            
+            
+            List(users) { user in
                 Text(user.name)
             }
-        }
-        .task { // добавляем этот модификатор к представлению (Лист например)
+            .navigationTitle("Project")
+            .task { // добавляем этот модификатор к представлению (Лист например)
                 await loadData()
-                  }
-                 // Далее создаем ф-ию для загрузки данных из интернет
-           
+            }
+            // Далее создаем ф-ию для загрузки данных из интернет
+        }
+        
     }
     
     func loadData() async {
@@ -38,8 +38,10 @@ struct ContentView: View {
               do {
                   let (data, _) = try await URLSession.shared.data(from: url) // пробуем  получить Дату из Юрл создавая запрос
 
-                  if let decodedResponse = try? JSONDecoder().decode(User.self, from: data) { // декодируем Дату в ТИП нашей структуры ДЖЕЙСОНА
-                     // results = decodedResponse.results // передаем загруженный массив результатов из загруженного инфо в массив структуры // Далее таблица заполнится
+                  if let usersjson = try? JSONDecoder().decode([User].self, from: data) { // декодируем Дату в ТИП нашей структуры ДЖЕЙСОНА
+                      
+                      users  = usersjson
+                      // передаем загруженный массив результатов из загруженного инфо в массив структуры // Далее таблица заполнитс
                   }
               } catch {
                   print("Invalid data") // ловим ошибки
