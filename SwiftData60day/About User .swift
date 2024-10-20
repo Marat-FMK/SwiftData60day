@@ -9,7 +9,7 @@ import SwiftUI
 
 struct About_User_: View {
     
-    @Bindable var user: User
+ private var user: User
     
     var body: some View {
         Text(user.name)
@@ -23,5 +23,5 @@ struct About_User_: View {
 }
 
 #Preview {
-    About_User_(user: .constant(User(id: "  dedf", isActive: "weffw", name: "wefwf", age: 2, company: "wdw", email: "dwdwwww", adress: "wdwd", about: "", registered: "", tags: "", friends: [Friend(id: "233", name: "Name of Friend")])))
+   
 }
